@@ -9,4 +9,5 @@ module.exports = {
     "<rootDir>/src/components/**/*.ts",
     "<rootDir>/src/pages/**/*.ts",
   ],
+  testEnvironment: "jsdom",
 };
