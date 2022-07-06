@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import SideMenu from "./";
 
-function renderSideMenu(isVisible = false, links = []) {
-  render(<SideMenu isVisible={isVisible} links={links} />);
+function renderSideMenu(isOpen = false, links = []) {
+  render(<SideMenu isOpen={isOpen} links={links} />);
 }
 
 const childrenLinksMock = [
@@ -33,20 +33,31 @@ describe("SideMenu", () => {
     renderSideMenu();
 
     expect(screen.getByTestId("side-menu")).toBeInTheDocument();
+
+    expect(screen.getByTestId("side-menu")).toHaveAttribute(
+      "aria-hidden",
+      "true"
+    );
   });
 
   it("should visibility is hidden when the component is not visible", () => {
     renderSideMenu();
 
-    expect(screen.getByTestId("side-menu")).toHaveClass("hidden");
-    expect(screen.getByTestId("side-menu")).toHaveStyle("display: none");
+    expect(screen.getByTestId("side-menu")).toHaveStyle({
+      visibility: "hidden",
+      opacity: 0,
+      transform: "translateX(-100%)",
+    });
   });
 
   it("should visibility is visible when the component is visible", () => {
     renderSideMenu(true);
 
-    expect(screen.getByTestId("side-menu")).toHaveClass("visible");
-    expect(screen.getByTestId("side-menu")).toHaveStyle("display: block");
+    expect(screen.getByTestId("side-menu")).toHaveStyle({
+      visibility: "visible",
+      opacity: 1,
+      transform: "translateX(0)",
+    });
   });
 
   it("should render children's links", () => {

@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import { Container } from "./styles";
 
 interface ISideMenu {
-  isVisible: boolean;
-  links: [
-    {
-      name: string;
-      link: string;
-    }
-  ];
+  isOpen: boolean;
+  links: ILinkChildren[];
 }
 
-export default function SideMenu({ isVisible, links }: ISideMenu) {
+type ILinkChildren = {
+  name: string;
+  link: string;
+};
+
+export default function SideMenu({ isOpen, links }: ISideMenu) {
   return (
-    <div
+    <Container
       data-testid="side-menu"
-      className={isVisible ? "visible" : "hidden"}
-      style={{ display: isVisible ? "" : "none" }}
+      isOpen={isOpen}
+      aria-hidden="true"
+      aria-label="Side Menu"
     >
       {links.map(({ name, link }) => (
-        <a href={link} data-testid="side-menu__links">
+        <a href={link} key={name} data-testid="side-menu__links">
           {name}
         </a>
       ))}
-    </div>
+    </Container>
   );
 }
