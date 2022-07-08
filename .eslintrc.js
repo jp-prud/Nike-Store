@@ -15,5 +15,12 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'linebreak-style': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'import/extensions': 'off',
+    'object-curly-newline': 'off',
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
   },
 };
