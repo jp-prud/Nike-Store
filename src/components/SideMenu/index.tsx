@@ -1,28 +1,26 @@
-import { Container } from "./styles";
+import { useContext } from 'react';
 
-interface ISideMenu {
-  isOpen: boolean;
-  links: ILinkChildren[];
-}
+import { ISideMenu } from './sideMenu.types';
+import { SideMenuContext } from '../../context/SideMenuContext';
 
-type ILinkChildren = {
-  name: string;
-  link: string;
-};
+import MenuIcon from '../../assets/icons/Menu.svg';
+import Wrapper from './Wrapper';
 
-export default function SideMenu({ isOpen, links }: ISideMenu) {
+export default function SideMenu({ links }: ISideMenu) {
+  const { handleToggleSideMenu } = useContext(SideMenuContext);
+
   return (
-    <Container
-      data-testid="side-menu"
-      isOpen={isOpen}
-      aria-hidden="true"
-      aria-label="Side Menu"
-    >
-      {links.map(({ name, link }) => (
-        <a href={link} key={name} data-testid="side-menu__links">
-          {name}
-        </a>
-      ))}
-    </Container>
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          handleToggleSideMenu();
+        }}
+      >
+        <img src={MenuIcon} alt="Toggle Side Menu" title="Toggle Side Menu" />
+      </button>
+
+      <Wrapper links={links} />
+    </>
   );
 }
