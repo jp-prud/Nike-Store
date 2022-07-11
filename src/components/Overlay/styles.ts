@@ -10,4 +10,5 @@ export const Container = styled(animated.div)`
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: 0.5s ease-out;
+  z-index: 1;
 `;

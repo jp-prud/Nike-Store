@@ -11,6 +11,7 @@ export const Container = styled(animated.nav)`
   position: absolute;
   inset: 0;
   padding: 24px 16px;
+  z-index: 1;
 
   button {
     display: inline-block;
