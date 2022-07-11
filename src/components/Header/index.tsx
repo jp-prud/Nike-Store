@@ -7,7 +7,7 @@ import { Wrapper } from './styles';
 import Logo from '../../assets/images/Logo.svg';
 import Minicart from '../../assets/images/icons/Minicart.svg';
 
-import links from './mocks/links';
+import links from '../../mocks/sideMenuLinks';
 
 export default function Header() {
   return (
