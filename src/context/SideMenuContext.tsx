@@ -1,4 +1,5 @@
-import { useState, createContext, ReactNode, useMemo } from 'react';
+/* eslint-disable react/jsx-no-constructed-context-values */
+import { useState, useCallback, createContext, ReactNode } from 'react';
 
 export const SideMenuContext = createContext({
   isOpen: false,
@@ -6,22 +7,19 @@ export const SideMenuContext = createContext({
 });
 
 export function SideMenuProvider({ children }: ReactNode | any) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  function handleToggleSideMenu() {
+  const handleToggleSideMenu = useCallback(() => {
     setIsOpen((prevState) => !prevState);
-  }
-
-  const contextValue = useMemo(
-    () => ({
-      isOpen,
-      handleToggleSideMenu,
-    }),
-    [],
-  );
+  }, []);
 
   return (
-    <SideMenuContext.Provider value={contextValue}>
+    <SideMenuContext.Provider
+      value={{
+        isOpen,
+        handleToggleSideMenu,
+      }}
+    >
       {children}
     </SideMenuContext.Provider>
   );

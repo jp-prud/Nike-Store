@@ -3,8 +3,9 @@ import { useContext } from 'react';
 import { ISideMenu } from './sideMenu.types';
 import { SideMenuContext } from '../../context/SideMenuContext';
 
-import MenuIcon from '../../assets/icons/Menu.svg';
 import Wrapper from './Wrapper';
+
+import MenuIcon from '../../assets/icons/Menu.svg';
 
 export default function SideMenu({ links }: ISideMenu) {
   const { handleToggleSideMenu } = useContext(SideMenuContext);
