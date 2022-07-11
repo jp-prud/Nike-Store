@@ -9,7 +9,7 @@ import { ISideMenu } from '../sideMenu.types';
 
 import { Container, PagesList } from './styles';
 
-import Close from '../../../assets/icons/Close.svg';
+import Close from '../../../assets/images/icons/Close.svg';
 
 export default function Wrapper({ links }: ISideMenu) {
   const { isOpen, handleToggleSideMenu } = useContext(SideMenuContext);

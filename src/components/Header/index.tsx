@@ -5,7 +5,7 @@ import SideMenu from '../SideMenu';
 import { Wrapper } from './styles';
 
 import Logo from '../../assets/images/Logo.svg';
-import Minicart from '../../assets/icons/Minicart.svg';
+import Minicart from '../../assets/images/icons/Minicart.svg';
 
 import links from './mocks/links';
 

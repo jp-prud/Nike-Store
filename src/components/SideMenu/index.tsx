@@ -5,7 +5,7 @@ import { SideMenuContext } from '../../context/SideMenuContext';
 
 import Wrapper from './Wrapper';
 
-import MenuIcon from '../../assets/icons/Menu.svg';
+import MenuIcon from '../../assets/images/icons/Menu.svg';
 
 export default function SideMenu({ links }: ISideMenu) {
   const { handleToggleSideMenu } = useContext(SideMenuContext);
