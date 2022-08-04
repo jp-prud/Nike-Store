@@ -14,10 +14,11 @@ export const Container = styled.section`
   .swiper-button-prev::after,
   .swiper-button-next::after {
     content: url(${Arrow});
+    transform: scale(0.4);
   }
 
   .swiper-button-prev::after {
-    transform: scaleX(-1);
+    transform: scaleX(-1) scale(0.4);
   }
 
   .swiper-pagination-clickable .swiper-pagination-bullet {
