@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { SideMenuProvider } from '../../context/SideMenuContext';
 
 import SideMenu from '../SideMenu';
@@ -15,9 +16,9 @@ export default function Header() {
       <Wrapper>
         <SideMenu links={links} />
 
-        <a href="/">
+        <Link to="/">
           <img src={Logo} alt="Nike Store" title="Nike Store" />
-        </a>
+        </Link>
 
         <button type="button">
           <img src={Minicart} alt="Minicart" title="Minicart" />
