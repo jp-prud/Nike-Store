@@ -1,22 +1,10 @@
 export default [
   {
-    name: 'Home',
-    link: '/',
+    name: 'Jordar Mint',
+    link: '/product/1',
   },
   {
-    name: 'SNKRS',
-    link: '/',
-  },
-  {
-    name: 'Shoes',
-    link: '/',
-  },
-  {
-    name: 'Jackets',
-    link: '/',
-  },
-  {
-    name: 'Skate',
-    link: '/',
+    name: 'Midnight Navy',
+    link: '/product/2',
   },
 ];
