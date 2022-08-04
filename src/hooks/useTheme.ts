@@ -14,7 +14,7 @@ export default function useTheme() {
   }, [theme]);
 
   function handleToggleTheme() {
-    setTheme((prevState) => (prevState === 'light' ? 'dark' : 'light'));
+    setTheme(prevState => (prevState === 'light' ? 'dark' : 'light'));
   }
 
   return { currentTheme, handleToggleTheme };
