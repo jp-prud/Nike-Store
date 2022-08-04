@@ -1,21 +1,34 @@
-import { Container, Details, Description } from './styles';
+import { useContext } from 'react';
+
+import Size from './Size';
+
+import { Container, Details, Description, BuyButton } from './styles';
+
+import { ProductPageContext } from '../../context/ProductPageContext';
 
 export default function ProductSummary() {
+  const { product } = useContext(ProductPageContext);
+
   return (
     <Container>
       <Details>
         <span>SNEAKER</span>
-        <h1>Air Jordan</h1>
-        <h4>RETRO 6 MINT</h4>
+        <h1>{product?.category}</h1>
+        <h4>{product?.name}</h4>
       </Details>
 
-      <Description>
-        Wmns Air Jordan 6 “Mint Foam” O AJ6 se destaca por ter sido o primeiro
-        sneaker de campeonato usado por Michael Jordan. Com uma mistura de tons
-        suaves, o modelo apresenta as cores branco e cinza claro que se alternam
-        na parte superior de couro, combinando os outros detalhes. A sola
-        apresenta base branca gelada e tons de menta para contrastar.
-      </Description>
+      <Description>{product?.description}</Description>
+
+      <div className="sizes">
+        <span>Escolha o seu tamanho:</span>
+        {product?.sizes.map(({ value, isAvailable }) => (
+          <Size isAvailable={isAvailable} key={value}>
+            {value}
+          </Size>
+        ))}
+      </div>
+
+      <BuyButton>COMPRAR</BuyButton>
     </Container>
   );
 }
