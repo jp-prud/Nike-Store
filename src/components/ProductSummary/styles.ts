@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Button from '../button';
+
 export const Container = styled.section`
   width: 100%;
   display: flex;
@@ -8,6 +10,17 @@ export const Container = styled.section`
 
   @media (min-width: 869px) {
     max-width: 480px;
+  }
+
+  .sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 8px;
+
+    span {
+      width: 100%;
+      display: block;
+    }
   }
 `;
 
@@ -34,3 +47,9 @@ export const Details = styled.div`
 `;
 
 export const Description = styled.div``;
+
+export const BuyButton = styled(Button)`
+  height: 60px;
+  border-radius: 12px;
+  font: bold 2rem/2.5rem 'Montserrat', sans-serif;
+`;
