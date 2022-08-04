@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,15 +22,12 @@ module.exports = {
     'linebreak-style': 'off',
     'react/react-in-jsx-scope': 'off',
     'import/extensions': 'off',
-    'object-curly-newline': 'off',
-    'import/no-unresolved': 'off',
-    'no-confusing-arrow': 'off',
-    'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
+    'import/no-unresolved': 'warn',
   },
   ignorePatterns: ['styles.ts'],
 };
