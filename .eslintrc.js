@@ -8,6 +8,8 @@ module.exports = {
     'airbnb',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -28,6 +30,7 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'import/no-unresolved': 'warn',
+    'prettier/prettier': 'error',
   },
   ignorePatterns: ['styles.ts'],
 };
