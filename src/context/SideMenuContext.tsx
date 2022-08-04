@@ -1,16 +1,21 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { useState, useCallback, createContext, ReactNode } from 'react';
 
-export const SideMenuContext = createContext({
+interface ISideMenuContext {
+  isOpen: boolean;
+  handleToggleSideMenu: () => void;
+}
+
+export const SideMenuContext = createContext<ISideMenuContext>({
   isOpen: false,
-  handleToggleSideMenu: () => {},
+  handleToggleSideMenu: () => undefined,
 });
 
-export function SideMenuProvider({ children }: ReactNode | any) {
+export function SideMenuProvider({ children }: ReactNode[] | any) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggleSideMenu = useCallback(() => {
-    setIsOpen((prevState) => !prevState);
+    setIsOpen(prevState => !prevState);
   }, []);
 
   return (

@@ -15,9 +15,7 @@ export default function ProductPageProvider({
   children,
   productId = '1',
 }: IProductPageProvider) {
-  const currentProduct = productsMock.find(
-    (product) => product.id === productId,
-  );
+  const currentProduct = productsMock.find(product => product.id === productId);
 
   return (
     <ProductPageContext.Provider

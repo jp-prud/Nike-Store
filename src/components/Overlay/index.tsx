@@ -15,7 +15,9 @@ export default function Overlay({ isOpen, onClose }: IOverlay) {
 
   return (
     <>
-      {transition((style: any, item: boolean) => (item ? <Container style={style} onClick={() => onClose()} /> : ''))}
+      {transition((style: any, item: boolean) =>
+        item ? <Container style={style} onClick={() => onClose()} /> : '',
+      )}
     </>
   );
 }

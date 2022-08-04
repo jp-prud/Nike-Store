@@ -11,7 +11,7 @@ export default function Size({ children, isAvailable }: ISize) {
   const [isSelected, setIsSelected] = useState(false);
 
   function handleSelectedProductSize() {
-    setIsSelected((prevState) => !prevState);
+    setIsSelected(prevState => !prevState);
   }
 
   return (
