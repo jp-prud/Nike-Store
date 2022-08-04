@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { useTransition } from 'react-spring';
 
+import { Link } from 'react-router-dom';
+
 import Overlay from '../../Overlay';
 
 import { SideMenuContext } from '../../../context/SideMenuContext';
@@ -34,9 +36,9 @@ export default function Wrapper({ links }: ISideMenu) {
 
   function createMenuLinks() {
     return links.map(({ name, link }) => (
-      <a href={link} key={name} data-testid="side-menu__links">
+      <Link to={link} key={name}>
         {name}
-      </a>
+      </Link>
     ));
   }
 
@@ -45,12 +47,7 @@ export default function Wrapper({ links }: ISideMenu) {
       <>
         <Overlay isOpen={isOpen} onClose={handleToggleSideMenu} />
 
-        <Container
-          data-testid="side-menu"
-          style={style}
-          aria-hidden="true"
-          aria-label="Side Menu"
-        >
+        <Container style={style} aria-hidden="true" aria-label="Side Menu">
           <button
             type="button"
             onClick={() => {
